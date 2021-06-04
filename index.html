@@ -1,0 +1,19 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <script src="https://www.puck-js.com/puck.js"></script>
+  <button onclick="Puck.write('LED1.set();\n');">LED On!</button>
+  <button onclick="Puck.write('LED1.reset();\n');">LED Off!</button>
+ </body>
+</html>
+
+
+<script>
+var http = require("http");
+http.get("http://10.0.0.83/STATUS", function(res) {
+  res.on('data', function(data) {
+    console.log(data);
+  });
+});
+</script>
